@@ -1,8 +1,8 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
-  cronTest = new cronJob('* * * * * *', () =>
-    envelope = room: "#general"
-    robot.send envelope, "キュンキュキュン☆（訳：今日の予定を共有してね）"
-  )
-  cronTest.start()
+	cron = require('cron').CronJob
+	module.exports = (robot) ->
+		new cron('* * * * * *', () ->
+			robot.messageRoom "#general", "おはよう朝だYo"
+			, null, true, 'Asia/Tokyo').start()
