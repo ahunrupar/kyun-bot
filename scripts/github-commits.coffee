@@ -39,7 +39,7 @@ module.exports = (robot) ->
     try
       if push.commits.length > 0
         commitWord = if push.commits.length > 1 then "commits" else "commit"
-        robot.send user, "Got #{push.commits.length} new #{commitWord} from #{push.commits[0].author.name} on #{push.repository.name}"
+        robot.send user, "キュンキュキュン☆（訳：#{push.commits.length}つの新しい#{commitWord}が作成された！ #{push.commits[0].author.name} -> #{push.repository.name}）"
         for commit in push.commits
           do (commit) ->
             gitio commit.url, (err, data) ->
